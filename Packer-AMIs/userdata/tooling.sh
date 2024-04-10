@@ -10,5 +10,5 @@ sudo apt install -y python3 ntp net-tools vim wget git htop php
 git clone https://github.com/darey-io/tooling.git
 
 # Move the Web Files to the html directory
-cd tooling/html
-cp -R  * /var/www/html
+# cd tooling/html
+# sudo cp -R  * /var/www/html/

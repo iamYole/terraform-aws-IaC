@@ -35,8 +35,7 @@ resource "random_shuffle" "az_list" {
 # launch template for bastion
 
 resource "aws_launch_template" "bastion-launch-template" {
-  //image_id               = lookup(var.Images, "US_Office", "RHEL_9")
-  image_id               = lookup(lookup(var.image, "US_Office"), "RHEL_9")
+  image_id               = lookup(var.image, "bastion-AMI")
   instance_type          = lookup(var.instance_type, var.instance_type_value)
   vpc_security_group_ids = [var.bastion_sg-id] //[aws_security_group.bastion_sg.id]
 
@@ -108,7 +107,7 @@ resource "aws_autoscaling_group" "bastion-asg" {
 # launch template for nginx
 
 resource "aws_launch_template" "nginx-launch-template" {
-  image_id               = lookup(lookup(var.image, "US_Office"), "RHEL_9")
+  image_id               = lookup(var.image, "nginx-AMI")
   instance_type          = lookup(var.instance_type, var.instance_type_value)
   vpc_security_group_ids = [var.nginx_sg-id] //[aws_security_group.nginx-sg.id]
 

@@ -55,7 +55,7 @@ module "efs" {
   tag_prefix      = local.tag_prefix
   tags            = local.tags
 }
-/* module "rds" {
+module "rds" {
   source = "./Modules/RDS"
 
   private_subnets = module.networking.private_subnets
@@ -68,7 +68,7 @@ module "efs" {
 
   tag_prefix = local.tag_prefix
   tags       = local.tags
-} */
+}
 module "security" {
   source = "./Modules/Security"
 

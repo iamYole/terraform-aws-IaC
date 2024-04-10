@@ -2,7 +2,7 @@
 
 resource "aws_launch_template" "wordpress-launch-template" {
   //image_id               = lookup(var.Images, "US_Office", "Ubuntu_Server_22")
-  image_id               = var.image["US_Office"]["Ubuntu_Server_22"]
+  image_id               = var.image["wordpress-AMI"]
   instance_type          = var.instance_type[var.instance_type_value]
   vpc_security_group_ids = [var.webserver_sg-id] //[aws_security_group.webserver-sg.id]
 
@@ -75,7 +75,7 @@ resource "aws_autoscaling_attachment" "asg_attachment_wordpress" {
 
 # launch template for tooling
 resource "aws_launch_template" "tooling-launch-template" {
-  image_id               = var.image["US_Office"]["Ubuntu_Server_22"]
+  image_id               = var.image["tooling-AMI"]
   instance_type          = lookup(var.instance_type, var.instance_type_value)
   vpc_security_group_ids = [var.webserver_sg-id] //[aws_security_group.webserver-sg.id]
 
