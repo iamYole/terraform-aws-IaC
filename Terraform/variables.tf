@@ -31,6 +31,9 @@ variable "domain_name" {
 variable "hosted_zone" {
   type = string
 }
+variable "image" {
+  type = map(any)
+}
 
 
 

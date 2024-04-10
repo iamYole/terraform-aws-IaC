@@ -8,3 +8,9 @@ domain_name      = "*.iamyole.uk"
 hosted_zone      = "iamyole.uk"
 wordpress_record = "wordpress.iamyole.uk"
 tooling_record   = "tooling.iamyole.uk"
+image = {
+  "bastion-AMI"   = "ami-0695d4327df64276f"
+  "tooling-AMI"   = "ami-0b8a63ab088648f25"
+  "nginx-AMI"     = "ami-0468511d9b22bcf44"
+  "wordpress-AMI" = "ami-06c65b48303adb1c1"
+}

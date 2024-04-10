@@ -2,7 +2,7 @@
 
 resource "aws_launch_template" "wordpress-launch-template" {
   //image_id               = lookup(var.Images, "US_Office", "Ubuntu_Server_22")
-  image_id               = var.image["wordpress-AMI"]
+  image_id               = var.wordpress_ami
   instance_type          = var.instance_type[var.instance_type_value]
   vpc_security_group_ids = [var.webserver_sg-id] //[aws_security_group.webserver-sg.id]
 
@@ -34,7 +34,7 @@ resource "aws_launch_template" "wordpress-launch-template" {
   }
 
   # create a file called wordpress.sh and copy the wordpress userdata from project 15 into it.
-  user_data = filebase64("${path.module}/userdata/wordpress.sh")
+  //user_data = filebase64("${path.module}/userdata/wordpress.sh")
 }
 
 
@@ -75,7 +75,7 @@ resource "aws_autoscaling_attachment" "asg_attachment_wordpress" {
 
 # launch template for tooling
 resource "aws_launch_template" "tooling-launch-template" {
-  image_id               = var.image["tooling-AMI"]
+  image_id               = var.tooling_ami
   instance_type          = lookup(var.instance_type, var.instance_type_value)
   vpc_security_group_ids = [var.webserver_sg-id] //[aws_security_group.webserver-sg.id]
 
@@ -107,7 +107,7 @@ resource "aws_launch_template" "tooling-launch-template" {
   }
 
   # create a file called tooling.sh and copy the tooling userdata from project 15 into it
-  user_data = filebase64("${path.module}/userdata/tooling.sh")
+  //user_data = filebase64("${path.module}/userdata/tooling.sh")
 }
 
 

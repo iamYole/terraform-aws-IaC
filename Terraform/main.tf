@@ -30,6 +30,12 @@ module "asg" {
   source = "./Modules/ASG"
 
   instance_type_value = local.instance_type_value
+  tooling_ami         = lookup(var.image, "tooling-AMI")
+  nginx_ami           = lookup(var.image, "nginx-AMI")
+  bastion_ami         = lookup(var.image, "bastion-AMI")
+  wordpress_ami       = lookup(var.image, "wordpress-AMI")
+
+
 
   bastion_sg-id   = module.security.bastion_sg-id
   nginx_sg-id     = module.security.nginx_sg-id
