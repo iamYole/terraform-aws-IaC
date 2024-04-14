@@ -2,7 +2,7 @@ locals {
   vpc_cidr                            = "172.16.0.0/16"
   enable_dns_support                  = "true"
   enable_dns_hostnames                = "true"
-  tag_prefix                          = "${terraform.workspace}_DIO"
+  tag_prefix                          = "DIO"
   preferred_number_of_public_subnets  = 2
   preferred_number_of_private_subnets = 4
   account_id                          = "023852436886"

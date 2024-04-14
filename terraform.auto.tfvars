@@ -1,6 +1,6 @@
 master-username  = "dbadmin"
 master-password  = "password"
-db_name          = "diobd"
+db_name          = "toolingdb"
 bucket           = "ytech-terraform-state"
 your_ip          = "[0.0.0.0/0]"
 keypair          = "ytech-key"
