@@ -27,7 +27,7 @@ resource "aws_launch_template" "wordpress-launch-template" {
     tags = merge(
       var.tags,
       {
-        Name = "${var.tag_prefix}DIO_wordpress-launch-template"
+        Name = "${var.tag_prefix}_wordpress-launch-template"
       },
     )
 
@@ -100,7 +100,7 @@ resource "aws_launch_template" "tooling-launch-template" {
     tags = merge(
       var.tags,
       {
-        Name = "${var.tag_prefix}_tooling-launch-template"
+        Name = "${var.tag_prefix}_tooling"
       },
     )
 
@@ -135,7 +135,7 @@ resource "aws_autoscaling_group" "tooling-asg" {
 
   tag {
     key                 = "Name"
-    value               = "${var.tag_prefix}DIO_tooling"
+    value               = "${var.tag_prefix}_tooling"
     propagate_at_launch = true
   }
 }
