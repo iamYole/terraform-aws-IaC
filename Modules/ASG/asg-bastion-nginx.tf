@@ -59,7 +59,7 @@ resource "aws_launch_template" "bastion-launch-template" {
     tags = merge(
       var.tags,
       {
-        Name = "${var.tag_prefix}DIO_bastion-launch-template"
+        Name = "${var.tag_prefix}_bastion-launch-template"
       },
     )
   }
@@ -97,7 +97,7 @@ resource "aws_autoscaling_group" "bastion-asg" {
   }
   tag {
     key                 = "Name"
-    value               = "${var.tag_prefix}DIO_bastion"
+    value               = "${var.tag_prefix}_bastion"
     propagate_at_launch = true
   }
 
@@ -131,7 +131,7 @@ resource "aws_launch_template" "nginx-launch-template" {
     tags = merge(
       var.tags,
       {
-        Name = "${var.tag_prefix}DIO_nginx-launch-template"
+        Name = "${var.tag_prefix}_nginx-launch-template"
       },
     )
   }
@@ -163,7 +163,7 @@ resource "aws_autoscaling_group" "nginx-asg" {
 
   tag {
     key                 = "Name"
-    value               = "${var.tag_prefix}DIO_nginx"
+    value               = "${var.tag_prefix}_nginx"
     propagate_at_launch = true
   }
 
