@@ -33,7 +33,7 @@ locals {
     ssh_username = "ubuntu"
     tag {
       key   = "Name"
-      value = "tooling-key"
+      value = "tooling-AMI"
     }
  }
 

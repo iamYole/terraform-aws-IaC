@@ -3,14 +3,14 @@
 #   default = "us-east-1"
 # }
 
-packer {
+/* packer {
   required_plugins {
     amazon = {
       version = ">= 1.2.8"
       source  = "github.com/hashicorp/amazon"
     }
   }
-}
+} */
     
 
 locals {
@@ -24,7 +24,7 @@ locals {
 
     source_ami_filter {
       filters = {
-        name                = "RHEL-9.3.0_HVM-20240117-x86_64-49-Hourly2-GP3"
+        name                = "RHEL-8.6.0_HVM-20240117-x86_64-2-Hourly2-GP3"
         root-device-type    = "ebs"
         virtualization-type = "hvm"
       }
@@ -34,7 +34,7 @@ locals {
     ssh_username = "ec2-user"
     tag {
       key   = "Name"
-      value = "bastion-key"
+      value = "bastion-AMI"
     }
  }
 

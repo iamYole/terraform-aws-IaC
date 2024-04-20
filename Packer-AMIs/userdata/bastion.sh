@@ -2,6 +2,7 @@
 #!/bin/bash
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 sudo yum install -y dnf-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm 
+
 sudo yum install -y mysql-server wget vim telnet htop git python3 net-tools zip
 sudo systemctl start chronyd
 sudo systemctl enable chronyd
@@ -15,7 +16,7 @@ sudo echo "export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/t
 source ~/.bash_profile
 
 # clone the Ansible repo
-git clone https://github.com/iamYole/terraform-aws-IaC.git
+git clone https://github.com/iamYole/terraform-aws-ansible-IaC.git
 
 
 # install botocore, ansible and awscli
@@ -31,7 +32,7 @@ sudo unzip awscliv2.zip
 sudo ./aws/install
 sudo yum install ansible -y
 sudo yum install -y policycoreutils-python-utils
-# ansible-galaxy collection install amazon.aws
-# ansible-galaxy collection install community.general
-# ansible-galaxy collection install community.mysql
-# ansible-galaxy collection install community.postgresql
+ansible-galaxy collection install amazon.aws
+ansible-galaxy collection install community.general
+ansible-galaxy collection install community.mysql
+ansible-galaxy collection install community.postgresql
