@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Update package lists
-sudo apt update
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+sudo yum install -y dnf-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm 
 
 # Install required packages
-sudo apt install -y python3 ntp net-tools vim wget git htop php
+sudo yum install -y python3 net-tools vim wget git htop php
 
 # Cloning the tooling site
 git clone https://github.com/darey-io/tooling.git

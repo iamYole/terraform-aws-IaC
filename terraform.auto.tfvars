@@ -10,7 +10,7 @@ wordpress_record = "wordpress.iamyole.uk"
 tooling_record   = "tooling.iamyole.uk"
 image = {
   "bastion-AMI"   = "ami-0d53691d0f22ac9e2"
-  "tooling-AMI"   = "ami-08a0ba75af0e397af"
+  "tooling-AMI"   = "ami-0b9cdb1804a780a8e"
   "nginx-AMI"     = "ami-0024bfbfff18bf8c6"
   "wordpress-AMI" = "ami-08e4de4f1b2b19b24"
 }
