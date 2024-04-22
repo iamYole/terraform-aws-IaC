@@ -40,7 +40,7 @@ resource "aws_lb_target_group" "nginx-tgt" {
 }
 
 # Adding a Listener to the Target Group
-/* resource "aws_lb_listener" "nginx-listner" {
+resource "aws_lb_listener" "nginx-listner" {
   load_balancer_arn = aws_lb.ext-alb.arn
   port              = 443
   protocol          = "HTTPS"
@@ -50,7 +50,7 @@ resource "aws_lb_target_group" "nginx-tgt" {
     type             = "forward"
     target_group_arn = aws_lb_target_group.nginx-tgt.arn
   }
-} */
+}
 
 
 
